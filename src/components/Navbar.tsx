@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { FaGithub, FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
@@ -17,16 +18,18 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center justify-center">
           <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            Projects
+            <Link href={"#projects"}>Projects</Link>
           </li>
           <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            Resume
+            <Link href={"/"}>Resume</Link>
           </li>
           <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            Skills
+            <Link href={"#skills"}>Skills</Link>
           </li>
           <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            Blogs
+            <Link href={"https://heyankit.hashnode.dev"} target="_blank">
+              Blogs
+            </Link>
           </li>
           <li className="p-2 m-2 cursor-pointer font-medium flex items-center justify-center rounded-md hover:text-blue-500">
             <FaGithub /> <span className="mx-2">GitHub</span>
@@ -51,16 +54,19 @@ const Navbar = () => {
         <div className="lg:hidden bg-[#21263d] text-white shadow-lg">
           <ul className="flex flex-col items-center">
             <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-              Projects
+              <Link href={"#projects"}>Projects</Link>
             </li>
             <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-              Skills
+              <Link href={"#skills"}>Skills</Link>
+            </li>
+
+            <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
+              <Link href={"/"}>Resume</Link>
             </li>
             <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-              Blogs
-            </li>
-            <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-              Contact
+              <Link href={"https://heyankit.hashnode.dev"} target="_blank">
+                Blogs
+              </Link>
             </li>
           </ul>
         </div>
