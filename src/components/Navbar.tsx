@@ -20,13 +20,13 @@ const Navbar = () => {
             Projects
           </li>
           <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
+            Resume
+          </li>
+          <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
             Skills
           </li>
           <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
             Blogs
-          </li>
-          <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            Contact
           </li>
           <li className="p-2 m-2 cursor-pointer font-medium flex items-center justify-center rounded-md hover:text-blue-500">
             <FaGithub /> <span className="mx-2">GitHub</span>

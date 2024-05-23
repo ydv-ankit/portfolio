@@ -3,6 +3,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { CiAt } from "react-icons/ci";
+import Link from "next/link";
 
 const Profile = () => {
   return (
@@ -25,23 +26,29 @@ const Profile = () => {
         <div className="text-4xl font-bold m-2">Ankit Yadav</div>
         <div className="text-xl font-bold m-1">Web Developer</div>
         <div className="flex mt-2">
-          <a href="" className="text-2xl mx-2">
+          <Link href="mailto:ankityadav11241@gmail.com" className="text-2xl mx-2">
             <CiAt className="text-blue-200" />
-          </a>
-          <a href="" className="text-2xl mx-2">
+          </Link>
+          <Link href="https://www.linkedin.com/in/ankityadav1121" className="text-2xl mx-2">
             <FaLinkedin className="text-blue-200" />
-          </a>
-          <a href="" className="text-2xl mx-2">
+          </Link>
+          <Link href="https://github.com/ydv-ankit" className="text-2xl mx-2">
             <FaGithub className="text-blue-200" />
-          </a>
-          <a href="" className="text-2xl mx-2">
+          </Link>
+          <Link href="https://x.com/ydvtwts" className="text-2xl mx-2">
             <FaXTwitter className="text-blue-200" />
-          </a>
+          </Link>
         </div>
-        <div className="mt-8 text-xl text-blue-100">Bio for me</div>
-        <div className="">
-          <button className="bg-blue-800 border-none outline-none m-8 px-4 py-2 rounded-md">Resume</button>
-          <button className="bg-blue-800 border-none outline-none m-8 px-4 py-2 rounded-md">Hire Me</button>
+        <div className="mt-8 text-xl text-blue-100">
+          Full Stack Dev🔥 | turning data into stories
+        </div>
+        <div className="flex md:flex-row flex-col">
+          <button className="bg-blue-800 border-none outline-none px-4 py-2 rounded-md m-2 mx-4">
+            <Link href={"/"}>Resume</Link>
+          </button>
+          <button className="bg-blue-800 border-none outline-none px-4 py-2 rounded-md m-2">
+            <Link href={"mailto:ankityadav11241@gmail.com"}>Hire Me</Link>
+          </button>
         </div>
       </div>
     </div>
