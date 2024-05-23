@@ -10,8 +10,8 @@ export default function ProjectCard({
   return (
     <Link
       href={"/"}
-      className="min-w-full border-[1px] border-gray-800 shadow-lg shadow-zinc-700 hover:scale-105 duration-200 hover:duration-400 hover:shadow-slate-300">
-      <img src={project.cover} alt="" className="w-full h-48" />
+      className="min-w-full border-[1px] border-gray-800 shadow-lg shadow-zinc-700 hover:scale-105 duration-200 hover:duration-400 hover:shadow-slate-300 overflow-hidden">
+      <img src={project.cover} alt="" className="w-full h-48 overflow-hidden" />
       <div className="px-6 py-4">
         <div className="font-bold text-xl hover:underline">{project.title}</div>
         {project.tags.length > 0 && (
