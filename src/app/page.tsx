@@ -1,51 +1,7 @@
 "use client";
 import Profile from "@/components/Profile";
 import ProjectCard from "@/components/ProjectCard";
-
-const projects = [
-  {
-    title: "Chat App",
-    cover: "https://harisheoran.xyz/projects/opsdock/featured.png",
-    tags: ["aws", "nodejs", "reactjs"],
-    desc: "a brief about this project details dnj,fha kdlfhsdjnf kdfbsajhbf sjbdjfbdbvnsdb ,bdsvbndsbvb",
-  },
-  {
-    title: "Chat App",
-    cover: "https://harisheoran.xyz/projects/opsdock/featured.png",
-    tags: ["aws", "nodejs", "reactjs"],
-    desc: "a brief about this project details",
-  },
-  {
-    title: "Chat App",
-    cover: "https://harisheoran.xyz/projects/opsdock/featured.png",
-    tags: ["aws", "nodejs", "reactjs"],
-    desc: "a brief about this project details",
-  },
-  {
-    title: "Chat App",
-    cover: "https://harisheoran.xyz/projects/opsdock/featured.png",
-    tags: ["aws", "nodejs", "reactjs"],
-    desc: "a brief about this project details",
-  },
-  {
-    title: "Chat App",
-    cover: "https://harisheoran.xyz/projects/opsdock/featured.png",
-    tags: ["aws", "nodejs", "reactjs"],
-    desc: "a brief about this project details",
-  },
-  {
-    title: "Chat App",
-    cover: "https://harisheoran.xyz/projects/opsdock/featured.png",
-    tags: ["aws", "nodejs", "reactjs"],
-    desc: "a brief about this project details",
-  },
-  {
-    title: "Chat App",
-    cover: "https://harisheoran.xyz/projects/opsdock/featured.png",
-    tags: ["aws", "nodejs", "reactjs"],
-    desc: "a brief about this project details",
-  },
-];
+import { projects } from "@/utils/projects";
 
 const page = () => {
   return (
@@ -55,8 +11,8 @@ const page = () => {
         <Profile />
         {projects && (
           <div className="mt-8" id="projects">
-            <div className="my-8 text-2xl font-extrabold">Projects</div>
-            <section className="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 px-2">
+            <div className="my-4 text-2xl font-extrabold">Projects</div>
+            <section className="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 px-2">
               {projects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}
