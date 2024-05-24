@@ -31,11 +31,11 @@ const Navbar = () => {
               Blogs
             </Link>
           </li>
-          <li className="p-2 m-2 cursor-pointer font-medium flex items-center justify-center rounded-md hover:text-blue-500">
-            <Link href={"https://github.com/ydv-ankit"} target="_blank">
+          <Link href={"https://github.com/ydv-ankit"} target="_blank">
+            <li className="p-2 m-2 cursor-pointer font-medium flex items-center justify-center rounded-md hover:text-blue-500">
               <FaGithub /> <span className="mx-2">GitHub</span>
-            </Link>
-          </li>
+            </li>
+          </Link>
         </ul>
       </div>
       {/* for small screen */}
