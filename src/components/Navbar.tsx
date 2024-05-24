@@ -32,7 +32,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="p-2 m-2 cursor-pointer font-medium flex items-center justify-center rounded-md hover:text-blue-500">
-            <FaGithub /> <span className="mx-2">GitHub</span>
+            <Link href={"https://github.com/ydv-ankit"} target="_blank">
+              <FaGithub /> <span className="mx-2">GitHub</span>
+            </Link>
           </li>
         </ul>
       </div>
@@ -43,7 +45,9 @@ const Navbar = () => {
         </div>
         <ul className="flex items-center justify-center">
           <div className="p-2 cursor-pointer">
-            <FaGithub />
+            <Link href={"https://github.com/ydv-ankit"} target="_blank">
+              <FaGithub />
+            </Link>
           </div>
           <div className="p-2 cursor-pointer" onClick={toggleMenu}>
             {isOpen ? <FaTimes /> : <FaBars />}

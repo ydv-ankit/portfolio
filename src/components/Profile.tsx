@@ -29,13 +29,13 @@ const Profile = () => {
           <Link href="mailto:ankityadav11241@gmail.com" className="text-2xl mx-2">
             <CiAt className="text-blue-200" />
           </Link>
-          <Link href="https://www.linkedin.com/in/ankityadav1121" className="text-2xl mx-2">
+          <Link href="https://www.linkedin.com/in/ankityadav1121" className="text-2xl mx-2" target="_blank">
             <FaLinkedin className="text-blue-200" />
           </Link>
-          <Link href="https://github.com/ydv-ankit" className="text-2xl mx-2">
+          <Link href="https://github.com/ydv-ankit" className="text-2xl mx-2" target="_blank">
             <FaGithub className="text-blue-200" />
           </Link>
-          <Link href="https://x.com/ydvtwts" className="text-2xl mx-2">
+          <Link href="https://x.com/ydvtwts" className="text-2xl mx-2" target="_blank">
             <FaXTwitter className="text-blue-200" />
           </Link>
         </div>
