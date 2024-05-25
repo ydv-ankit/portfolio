@@ -17,20 +17,30 @@ const Navbar = () => {
           Ankit Ydv
         </div>
         <ul className="flex items-center justify-center">
-          <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            <Link href={"#projects"}>Projects</Link>
-          </li>
-          <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            <Link href={"/"}>Resume</Link>
-          </li>
-          <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            <Link href={"#skills"}>Skills</Link>
-          </li>
-          <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            <Link href={"https://heyankit.hashnode.dev"} target="_blank">
+          <Link href={"#projects"}>
+            <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
+              Projects
+            </li>
+          </Link>
+          <Link
+            href={
+              "https://drive.google.com/file/d/1ss54JrfSdwjOeHotoXudanc_m6Hj_lAg/view?usp=sharing"
+            }
+            target="_blank">
+            <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
+              Resume
+            </li>
+          </Link>
+          <Link href={"#skills"}>
+            <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
+              Skills
+            </li>
+          </Link>
+          <Link href={"https://heyankit.hashnode.dev"} target="_blank">
+            <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
               Blogs
-            </Link>
-          </li>
+            </li>
+          </Link>
           <Link href={"https://github.com/ydv-ankit"} target="_blank">
             <li className="p-2 m-2 cursor-pointer font-medium flex items-center justify-center rounded-md hover:text-blue-500">
               <FaGithub /> <span className="mx-2">GitHub</span>
