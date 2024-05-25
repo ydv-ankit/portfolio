@@ -19,7 +19,7 @@ export default function ProjectCard({
     <Link
       target="_blank"
       href={project.deploy_link}
-      className="min-w-full border-[1px] border-gray-800 shadow-lg shadow-zinc-700 duration-200 hover:duration-400 hover:shadow-slate-300 overflow-hidden mt-4">
+      className="min-w-full border-[1px] border-gray-800 shadow-lg shadow-zinc-700 duration-200 hover:duration-400 hover:shadow-blue-500 overflow-hidden mt-4">
       <div className="relative block w-full h-48">
         <Image
           fill={true}
