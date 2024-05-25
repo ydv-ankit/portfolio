@@ -5,8 +5,30 @@ import { FaXTwitter } from "react-icons/fa6";
 import { CiAt } from "react-icons/ci";
 import Link from "next/link";
 import Image from "next/image";
+import Typed from "typed.js";
+import React from "react";
 
 const Profile = () => {
+  const el = React.useRef(null);
+
+  React.useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: [
+        "<i>MERN Developer</i>",
+        "<i>ReactJs</i> Developer",
+        "Full Stack Developer",
+        "<i>NodeJs</i> Developer",
+      ],
+      typeSpeed: 60,
+      loop: true,
+      backSpeed: 40,
+      backDelay: 300,
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   return (
     <div className="relative overflow-hidden">
       <div
@@ -26,8 +48,10 @@ const Profile = () => {
           src="/assets/img/profile.jpeg"
           alt="profile pic"
         />
-        <div className="text-4xl font-bold m-2">Ankit Yadav</div>
-        <div className="text-xl font-bold m-1">Web Developer</div>
+        <div className="text-4xl font-bold m-2 relative">Ankit Yadav</div>
+        <div className="text-2xl font-bold m-2">
+          <span ref={el} />
+        </div>
         <div className="flex mt-2">
           <Link
             href="mailto:ankityadav11241@gmail.com"
@@ -53,14 +77,14 @@ const Profile = () => {
             <FaXTwitter className="text-blue-200" />
           </Link>
         </div>
-        <div className="mt-8 text-xl text-blue-100">
-          Full Stack Dev🔥 | turning data into stories
+        <div className="mt-4 mb-4 text-xl text-blue-100">
+          turning data into stories 🔥
         </div>
         <div className="flex md:flex-row flex-col">
-          <button className="bg-blue-800 border-none outline-none px-4 py-2 rounded-md m-2 mx-4">
+          <button className="bg-slate-500 bg-opacity-30 border-x border-y outline-none px-4 py-2 rounded-md m-2 hover:bg-white duration-100 hover:duration-300 hover:text-blue-600 font-semibold">
             <Link href={"/"}>Resume</Link>
           </button>
-          <button className="bg-blue-800 border-none outline-none px-4 py-2 rounded-md m-2">
+          <button className="bg-slate-500 bg-opacity-30 border-x border-y outline-none px-4 py-2 rounded-md m-2 hover:bg-white duration-100 hover:duration-300 hover:text-blue-600 font-semibold">
             <Link href={"mailto:ankityadav11241@gmail.com"}>Hire Me</Link>
           </button>
         </div>
