@@ -1,4 +1,14 @@
-export const projects = [
+interface project {
+    pid: string,
+    title: string,
+    cover: string,
+    tags: string[],
+    code_link: string,
+    deploy_link: string,
+    desc: string,
+}
+
+export const projects: project[] = [
     {
         pid: "1",
         title: "Chat App",
