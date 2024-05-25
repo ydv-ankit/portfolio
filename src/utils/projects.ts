@@ -1,5 +1,4 @@
 interface project {
-    pid: string,
     title: string,
     cover: string,
     tags: string[],
@@ -10,7 +9,6 @@ interface project {
 
 export const projects: project[] = [
     {
-        pid: "1",
         title: "Chat App",
         cover: "/assets/projects/chatapp.png",
         tags: ["aws", "nodejs", "reactjs", "mongoDB", "mongoose", "socket.io", "zustand", "RestAPI"],
@@ -18,7 +16,6 @@ export const projects: project[] = [
         deploy_link: "https://chatting-app-client.vercel.app/",
         desc: "Developed a full stack chat app using React.js and Node.js, websockets and MongoDB for data storage. Features include real-time messaging, user authentication, and chat room creation, integrated.",
     }, {
-        pid: "2",
         title: "B-Social WebApp",
         cover: "/assets/projects/bsocial.png",
         tags: ["aws", "nodejs", "reactjs", "mongoDB", "mongoose", "zustand", "RestAPI", "firebase", "MUI"],
@@ -26,7 +23,6 @@ export const projects: project[] = [
         deploy_link: "https://b-social-lovat.vercel.app/",
         desc: "A fullstack social media app using React.js and Node.js. Implemented user authentication, real-time posting, liking, commenting, and following features. Utilized RESTful APIs, and MongoDB for database integration.",
     }, {
-        pid: "3",
         title: "GYM Fitness",
         cover: "/assets/projects/gym.png",
         tags: ["reactjs", "MUI", "animation", "responsive"],
@@ -34,7 +30,6 @@ export const projects: project[] = [
         deploy_link: "https://my-fitness-gym.netlify.app/",
         desc: "Developed a gym fitness website using the RapidAPI API and MUI. Integrated animated images for comprehensive guide and ensured a responsive, user-friendly interface with Material-UI components",
     }, {
-        pid: "4",
         title: "Analog Clock",
         cover: "/assets/projects/analog_clock.png",
         tags: ["CSS", "Javascript", "Math"],
@@ -42,7 +37,6 @@ export const projects: project[] = [
         deploy_link: "https://analog-clock-swart-eta.vercel.app/",
         desc: "An analog clock using HTML, CSS, and JavaScript. Implemented the clock face and hands with HTML and CSS, and used JavaScript to animate the hands based on the current time.",
     }, {
-        pid: "5",
         title: "Secure Password Generator",
         cover: "/assets/projects/secure_password.png",
         tags: ["CSS", "Javascript", "algorithm", "math"],
@@ -50,7 +44,6 @@ export const projects: project[] = [
         deploy_link: "https://password-secure.netlify.app/",
         desc: "Developed a secure password generator using HTML, CSS, and JavaScript. Features customizable password length and options for including uppercase letters, numbers, and special characters.",
     }, {
-        pid: "6",
         title: "Digital Clock",
         cover: "/assets/projects/digital_clock.png",
         tags: ["CSS", "Javascript"],
@@ -58,7 +51,6 @@ export const projects: project[] = [
         deploy_link: "https://digital-clock-ashy-seven.vercel.app/",
         desc: "Digital clock using HTML, CSS, and JavaScript. Displays the current time with hours, minutes, and seconds, and updates in real-time. Styled for a clean and modern look with responsive design.",
     }, {
-        pid: "7",
         title: "Guess the number",
         cover: "/assets/projects/guess_the_number.png",
         tags: ["CSS", "Javascript", "math"],
