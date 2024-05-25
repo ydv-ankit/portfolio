@@ -81,12 +81,20 @@ const Profile = () => {
           turning data into stories 🔥
         </div>
         <div className="flex md:flex-row flex-col">
-          <button className="bg-slate-500 bg-opacity-30 border-x border-y outline-none px-4 py-2 rounded-md m-2 hover:bg-white duration-100 hover:duration-300 hover:text-blue-600 font-semibold">
-            <Link href={"/"}>Resume</Link>
-          </button>
-          <button className="bg-slate-500 bg-opacity-30 border-x border-y outline-none px-4 py-2 rounded-md m-2 hover:bg-white duration-100 hover:duration-300 hover:text-blue-600 font-semibold">
-            <Link href={"mailto:ankityadav11241@gmail.com"}>Hire Me</Link>
-          </button>
+          <Link
+            href={
+              "https://drive.google.com/file/d/1ss54JrfSdwjOeHotoXudanc_m6Hj_lAg/view?usp=sharing"
+            }
+            target="_blank">
+            <button className="bg-slate-500 bg-opacity-30 border-x border-y outline-none px-4 py-2 rounded-md m-2 hover:bg-white duration-100 hover:duration-300 hover:text-blue-600 font-semibold">
+              Resume
+            </button>
+          </Link>
+          <Link href={"mailto:ankityadav11241@gmail.com"}>
+            <button className="bg-slate-500 bg-opacity-30 border-x border-y outline-none px-4 py-2 rounded-md m-2 hover:bg-white duration-100 hover:duration-300 hover:text-blue-600 font-semibold">
+              Hire Me
+            </button>
+          </Link>
         </div>
       </div>
     </div>
