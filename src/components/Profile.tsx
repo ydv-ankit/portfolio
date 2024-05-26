@@ -38,7 +38,7 @@ const Profile = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "brightness(0.7) ",
+          filter: "brightness(0.6) ",
         }}></div>
       <div className="relative flex flex-col items-center justify-center min-h-[30rem] py-24">
         <Image
@@ -48,7 +48,9 @@ const Profile = () => {
           src="/assets/img/profile.jpeg"
           alt="profile pic"
         />
-        <div className="text-4xl font-bold m-2 relative">Ankit Yadav</div>
+        <div className="text-4xl font-bold m-2 relative text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-300 font-mono">
+          Ankit Yadav
+        </div>
         <div className="text-2xl font-bold m-2">
           <span ref={el} />
         </div>
@@ -77,8 +79,8 @@ const Profile = () => {
             <FaXTwitter className="text-blue-200" />
           </Link>
         </div>
-        <div className="mt-4 mb-4 text-xl text-blue-100">
-          turning data into stories 🔥
+        <div className="mt-4 mb-4 text-xl text-blue-100 text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-green-400 w-80 text-wrap text-center">
+          Crafting Dynamic Web Experiences with MERN Precision
         </div>
         <div className="flex md:flex-row flex-col">
           <Link
