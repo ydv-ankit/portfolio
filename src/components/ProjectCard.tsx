@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function ProjectCard({
   project,
@@ -16,34 +17,44 @@ export default function ProjectCard({
   };
 }) {
   return (
-    <Link
-      target="_blank"
-      href={project.deploy_link}
-      className="min-w-full border-[1px] border-gray-800 shadow-lg shadow-zinc-700 duration-200 hover:duration-400 hover:shadow-blue-500 overflow-hidden mt-4">
-      <div className="relative block w-full h-48">
-        <Image
-          fill={true}
-          src={project.cover ? project.cover : "/assets/projects/template.png"}
-          alt={project.title}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="w-full"
-        />
-      </div>
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl hover:underline">{project.title}</div>
-        {project.tags.length > 0 && (
-          <div className="flex text-blue-400 flex-wrap justify-stretch items-center">
-            {project.tags.map((tag, index) => (
-              <div
-                key={index}
-                className="border-[1px] border-blue-600 w-fit p-1 text-sm rounded-lg mr-2 m-2">
-                {tag}
-              </div>
-            ))}
+    <motion.div
+      className="min-w-full border-[1px] border-gray-800 shadow-lg shadow-zinc-700 duration-200 hover:duration-400 hover:shadow-blue-500 overflow-hidden mt-4"
+      initial={{ opacity: 0, scale: 0.5 }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 1 },
+      }}>
+      <Link target="_blank" href={project.deploy_link}>
+        <div className="relative block w-full h-48">
+          <Image
+            fill={true}
+            src={
+              project.cover ? project.cover : "/assets/projects/template.png"
+            }
+            alt={project.title}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="w-full"
+          />
+        </div>
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl hover:underline">
+            {project.title}
           </div>
-        )}
-        <div className="text-justify my-2">{project.desc}</div>
-      </div>
-    </Link>
+          {project.tags.length > 0 && (
+            <div className="flex text-blue-400 flex-wrap justify-stretch items-center">
+              {project.tags.map((tag, index) => (
+                <div
+                  key={index}
+                  className="border-[1px] border-blue-600 w-fit p-1 text-sm rounded-lg mr-2 m-2">
+                  {tag}
+                </div>
+              ))}
+            </div>
+          )}
+          <div className="text-justify my-2">{project.desc}</div>
+        </div>
+      </Link>
+    </motion.div>
   );
 }

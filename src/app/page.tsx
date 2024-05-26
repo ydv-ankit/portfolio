@@ -3,6 +3,7 @@ import Profile from "@/components/Profile";
 import ProjectCard from "@/components/ProjectCard";
 import Skills from "@/components/Skills";
 import { projects } from "@/utils/projects";
+import { motion } from "framer-motion";
 
 const page = () => {
   return (
@@ -11,14 +12,19 @@ const page = () => {
         <div className="h-32"></div>
         <Profile />
         {projects && (
-          <div className="mt-8 pb-4" id="projects">
-            <div className="my-4 text-2xl font-extrabold">Projects</div>
+          <motion.div className="mt-8 pb-4" id="projects">
+            <motion.div
+              className="my-4 text-2xl font-extrabold"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}>
+              Projects
+            </motion.div>
             <section className="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 px-2">
               {projects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}
             </section>
-          </div>
+          </motion.div>
         )}
         <Skills />
       </div>
