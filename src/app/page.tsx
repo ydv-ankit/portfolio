@@ -1,6 +1,7 @@
 "use client";
 import Profile from "@/components/Profile";
 import ProjectCard from "@/components/ProjectCard";
+import Skills from "@/components/Skills";
 import { projects } from "@/utils/projects";
 
 const page = () => {
@@ -10,7 +11,7 @@ const page = () => {
         <div className="h-32"></div>
         <Profile />
         {projects && (
-          <div className="mt-8" id="projects">
+          <div className="mt-8 pb-4" id="projects">
             <div className="my-4 text-2xl font-extrabold">Projects</div>
             <section className="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 px-2">
               {projects.map((project, index) => (
@@ -19,6 +20,7 @@ const page = () => {
             </section>
           </div>
         )}
+        <Skills />
       </div>
     </div>
   );
