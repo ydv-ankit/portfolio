@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaGithub, FaTimes } from "react-icons/fa";
@@ -59,12 +60,7 @@ const Navbar = () => {
       {/* for small screen */}
       <div className="flex lg:hidden justify-between items-center text-white">
         <div className="m-2 p-2 font-bold text-xl cursor-pointer">
-          <Image
-            src="/assets/img/ankitydv.png"
-            width={50}
-            height={50}
-            alt="logo"
-          />
+          Ankit Ydv
         </div>
         <ul className="flex items-center justify-center">
           <div className="p-2 cursor-pointer">
