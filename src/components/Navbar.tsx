@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaGithub, FaTimes } from "react-icons/fa";
@@ -13,8 +14,15 @@ const Navbar = () => {
   return (
     <nav className="fixed inset-x-0 bg-[#21263d] z-40">
       <div className="hidden lg:flex relative w-3/5 mx-auto justify-between items-center text-white">
-        <div className="m-2 p-2 font-bold text-xl cursor-pointer">
-          Ankit Ydv
+        <div className="cursor-pointer">
+          <Link href={"/"}>
+            <Image
+              src="/assets/img/ankitydv.png"
+              width={110}
+              height={5}
+              alt="logo"
+            />
+          </Link>
         </div>
         <ul className="flex items-center justify-center">
           <Link href={"#projects"}>
@@ -51,7 +59,12 @@ const Navbar = () => {
       {/* for small screen */}
       <div className="flex lg:hidden justify-between items-center text-white">
         <div className="m-2 p-2 font-bold text-xl cursor-pointer">
-          Ankit Ydv
+          <Image
+            src="/assets/img/ankitydv.png"
+            width={50}
+            height={50}
+            alt="logo"
+          />
         </div>
         <ul className="flex items-center justify-center">
           <div className="p-2 cursor-pointer">
