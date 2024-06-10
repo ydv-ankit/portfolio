@@ -9,13 +9,6 @@ interface project {
 
 export const projects: project[] = [
     {
-        title: "Chat App",
-        cover: "/assets/projects/chatapp.png",
-        tags: ["aws", "nodejs", "reactjs", "mongoDB", "mongoose", "socket.io", "zustand", "RestAPI"],
-        code_link: "https://github.com/ydv-ankit/chatting-client",
-        deploy_link: "https://chatting-app-client.vercel.app/",
-        desc: "Developed a full stack chat app using React.js and Node.js, websockets and MongoDB for data storage. Features include real-time messaging, user authentication, and chat room creation, integrated.",
-    }, {
         title: "B-Social WebApp",
         cover: "/assets/projects/bsocial.png",
         tags: ["aws", "nodejs", "reactjs", "mongoDB", "mongoose", "zustand", "RestAPI", "firebase", "MUI"],
