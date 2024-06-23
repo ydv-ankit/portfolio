@@ -9,6 +9,14 @@ interface project {
 
 export const projects: project[] = [
     {
+        title: "PenPulse - Markdown Blogging Platform",
+        cover: "/assets/projects/blog.png",
+        tags: ["nextjs", "typescript", "supabase", "github", "zod", "auth", "zustand", "RestAPI", "shadcn", "tailwindCSS", "radix-ui"],
+        code_link: "https://github.com/ydv-ankit/PenPulse",
+        deploy_link: "https://pen-pulse.vercel.app/",
+        desc: "This webapp uses nextjs power with markdown for easy content creation, authenticate securely through GitHub ensuring a smooth login experience, a personalized dashboard for managing blog posts.",
+    },
+    {
         title: "B-Social WebApp",
         cover: "/assets/projects/bsocial.png",
         tags: ["aws", "nodejs", "reactjs", "mongoDB", "mongoose", "zustand", "RestAPI", "firebase", "MUI"],
