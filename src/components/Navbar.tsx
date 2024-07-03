@@ -18,14 +18,8 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="hidden lg:flex space-x-8">
-          <Link to={"#projects"} className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            Projects
-          </Link>
           <Link to={"https://resume.ankitydv.me"} target="_blank" className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
             Resume
-          </Link>
-          <Link to={"#skills"} className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            Skills
           </Link>
           <Link to={"https://heyankit.hashnode.dev"} target="_blank" className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
             Blogs
@@ -48,16 +42,6 @@ const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden bg-[#21263d] text-white shadow-lg">
           <ul className="flex flex-col items-center">
-            <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-              <Link to={"#projects"} onClick={toggleMenu}>
-                Projects
-              </Link>
-            </li>
-            <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-              <Link to={"#skills"} onClick={toggleMenu}>
-                Skills
-              </Link>
-            </li>
             <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
               <Link to={"https://resume.ankitydv.me"} onClick={toggleMenu}>
                 Resume

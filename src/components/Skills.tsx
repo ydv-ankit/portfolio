@@ -28,7 +28,7 @@ const Skill = ({ text, x, y }: { text: string; x: number; y: number }) => {
 
 export default function Skills() {
   return (
-    <div id="skills" className="w-full">
+    <div className="w-full">
       <div className="my-3 text-2xl font-extrabold">Skills</div>
       <div className="w-full h-vh flex items-center justify-center">
         <div className="hidden lg:flex flex-wrap justify-center items-center rounded-full bg-circularLight h-screen">
