@@ -9,6 +9,20 @@ interface project {
 
 export const projects: project[] = [
 	{
+		title: "CryptoStats",
+		cover: "/assets/projects/cryptostats.png",
+		tags: [
+			"reactjs",
+			"react hooks",
+			"recharts",
+			"tailwindCSS",
+			"API Integration",
+		],
+		code_link: "https://github.com/ydv-ankit/crypto-stats",
+		deploy_link: "https://crypto-stats-phi.vercel.app/",
+		desc: "Developed a cryptocurrency dashboard in React.js that fetches real-time data to display key details like prices, market caps, and trends, providing users with an interactive and dynamic view of the crypto market.",
+	},
+	{
 		title: "React Dashboard",
 		cover: "/assets/projects/react-dashboard.png",
 		tags: [
