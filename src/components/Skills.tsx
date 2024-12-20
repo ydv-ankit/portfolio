@@ -1,4 +1,4 @@
-import { SiTailwindcss } from "react-icons/si";
+import { SiMysql, SiPostgresql, SiTailwindcss } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
@@ -42,15 +42,17 @@ export default function Skills() {
           <Skill text="Next.js" x={-30} y={110} />
           <Skill text="TypeScript" x={50} y={-210} />
           <Skill text="Node.js" x={160} y={-120} />
-          <Skill text="Express.js" x={-180} y={-180} />
-          <Skill text="MongoDB" x={-140} y={280} />
+          <Skill text="Express.js" x={-280} y={-250} />
+          <Skill text="MongoDB" x={320} y={280} />
           <Skill text="AWS" x={240} y={200} />
           <Skill text="Docker" x={70} y={210} />
-          <Skill text="CI/CD" x={-200} y={150} />
+          <Skill text="CI/CD" x={-250} y={280} />
           <Skill text="Git" x={-50} y={-290} />
-          <Skill text="Redux" x={300} y={20} />
+          <Skill text="Redux" x={320} y={60} />
           <Skill text="Figma" x={-300} y={-10} />
-          <Skill text="Postman" x={230} y={-200} />
+          <Skill text="Postman" x={270} y={-230} />
+          <Skill text="MySQL" x={290} y={-100} />
+          <Skill text="PostgreSQL" x={-170} y={200} />
         </div>
       </div>
       <div className="lg:hidden flex flex-wrap gap-4 pb-4">
@@ -105,6 +107,14 @@ export default function Skills() {
         <div className="bg-[#2c2f3d] p-2 rounded-md flex justify-center items-center">
           <SiPostman />
           <span className="mx-2">Postman</span>
+        </div>
+        <div className="bg-[#2c2f3d] p-2 rounded-md flex justify-center items-center">
+          <SiMysql />
+          <span className="mx-2">MySQL</span>
+        </div>
+        <div className="bg-[#2c2f3d] p-2 rounded-md flex justify-center items-center">
+          <SiPostgresql />
+          <span className="mx-2">PostgreSQL</span>
         </div>
       </div>
     </div>
