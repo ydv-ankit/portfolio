@@ -1,5 +1,5 @@
+import ProjectsSection from "./components/Pagination";
 import Profile from "./components/Profile";
-import ProjectCard from "./components/ProjectCard";
 import Skills from "./components/Skills";
 import { projects } from "./utils/projects";
 import { motion } from "framer-motion";
@@ -18,11 +18,7 @@ const App = () => {
               whileInView={{ opacity: 1, scale: 1 }}>
               Projects
             </motion.div>
-            <section className="w-full grid gap-4 sm:grid-cols-1 md:grid-cols-2 2xl:grid-cols-3">
-              {projects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
-              ))}
-            </section>
+            <ProjectsSection projects={projects} />
           </div>
         )}
         <Skills />

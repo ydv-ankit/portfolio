@@ -1,4 +1,4 @@
-interface project {
+export interface project {
   title: string;
   cover: string;
   tags: string[];
@@ -8,6 +8,21 @@ interface project {
 }
 
 export const projects: project[] = [
+  {
+    title: "Security Manager",
+    cover: "/assets/projects/security-manager-arch.png",
+    tags: [
+      "typescript",
+      "docker",
+      "aws",
+      "security",
+      "AES algorithm",
+      "node js",
+    ],
+    code_link: "https://github.com/ydv-ankit/security-manager-server",
+    deploy_link: "https://keys.ankitydv.me",
+    desc: "Implemented encryption algorithm to securely save data (user credentials) to database. Built in typescript along with github actions & AWS for CI/CD pipeline.",
+  },
   {
     title: "CryptoStats",
     cover: "/assets/projects/cryptostats.png",
@@ -23,24 +38,9 @@ export const projects: project[] = [
     desc: "Developed a cryptocurrency dashboard in React.js that fetches real-time data to display key details like prices, market caps, and trends, providing users with an interactive and dynamic view of the crypto market.",
   },
   {
-    title: "Security Manager",
-    cover: "/assets/projects/security-manager-arch.png",
-    tags: [
-      "typescript",
-      "docker",
-      "aws",
-      "security",
-      "AES algorithm",
-      "nodejs",
-    ],
-    code_link: "https://github.com/ydv-ankit/security-manager-server",
-    deploy_link: "https://keys.ankitydv.me",
-    desc: "Implemented encryption algorithm to securely save data (user credentials) to database. Built in typescript along with github actions & AWS for CI/CD pipeline.",
-  },
-  {
     title: "React Dashboard",
     cover: "/assets/projects/react-dashboard.png",
-    tags: ["reactjs", "framer-motion", "tailwindCSS", "recharts", "dashboard"],
+    tags: ["react js", "framer-motion", "tailwindCSS", "recharts", "dashboard"],
     code_link: "https://github.com/ydv-ankit/react-dashboard-ui",
     deploy_link: "https://react-dashboard-0.vercel.app",
     desc: "React dashboard powered by Framer Motion for smooth animations and Recharts for dynamic data visualizations! Bringing interactivity and insights together for a seamless user experience.",
@@ -48,7 +48,7 @@ export const projects: project[] = [
   {
     title: "Repoguard",
     cover: "/assets/projects/repoguard.png",
-    tags: ["nodejs", "meow", "pkg", "GitHub API", "RESTful API"],
+    tags: ["node js", "meow", "pkg", "GitHub API", "RESTful API"],
     code_link: "https://github.com/ydv-ankit/repoguard",
     deploy_link: "https://github.com/ydv-ankit/repoguard/releases",
     desc: "RepoGuard is a powerful command-line tool designed to streamline the management of GitHub repositories and using github tokens.",
@@ -57,7 +57,7 @@ export const projects: project[] = [
     title: "PenPulse - Markdown Blogging Platform",
     cover: "/assets/projects/blog.png",
     tags: [
-      "nextjs",
+      "next js",
       "typescript",
       "supabase",
       "github",
@@ -78,8 +78,8 @@ export const projects: project[] = [
     cover: "/assets/projects/bsocial.png",
     tags: [
       "aws",
-      "nodejs",
-      "reactjs",
+      "node js",
+      "react js",
       "mongoDB",
       "mongoose",
       "zustand",

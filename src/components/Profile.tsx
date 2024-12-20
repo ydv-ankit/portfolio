@@ -36,8 +36,7 @@ const Profile = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "brightness(0.6) ",
-        }}
-      ></div>
+        }}></div>
       <div className="relative flex flex-col items-center justify-center min-h-[30rem] py-24">
         <img
           width={192}
@@ -59,22 +58,19 @@ const Profile = () => {
           <Link
             to="https://www.linkedin.com/in/ankityadav1121"
             className="text-2xl mx-2"
-            target="_blank"
-          >
+            target="_blank">
             <FaLinkedin className="text-blue-200" />
           </Link>
           <Link
             to="https://github.com/ydv-ankit"
             className="text-2xl mx-2"
-            target="_blank"
-          >
+            target="_blank">
             <FaGithub className="text-blue-200" />
           </Link>
           <Link
             to="https://twitter.com/ydvtwts"
             className="text-2xl mx-2"
-            target="_blank"
-          >
+            target="_blank">
             <FaTwitter className="text-blue-200" />
           </Link>
         </div>
@@ -82,12 +78,7 @@ const Profile = () => {
           Crafting Dynamic Web Experiences with MERN Precision
         </div>
         <div className="flex">
-          <Link
-            to={
-              "https://resume.ankitydv.me"
-            }
-            target="_blank"
-          >
+          <Link to={"https://resume.ankitydv.me"} target="_blank">
             <button className="bg-slate-500 bg-opacity-30 border-x border-y outline-none px-4 py-2 rounded-md m-2 hover:bg-white duration-100 hover:duration-300 hover:text-blue-600 font-semibold">
               Resume
             </button>

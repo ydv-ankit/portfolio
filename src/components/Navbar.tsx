@@ -10,21 +10,35 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed inset-x-0 bg-[#21263d] z-40 shadow-lg -top-1">
+    <nav className="fixed inset-x-0 bg-[#21263d] z-40 shadow-lg -top-1 md:bg-transparent md:hover:bg-[#21263d] transition-all">
       <div className="container flex mx-auto justify-between lg:justify-around items-center text-white px-4 lg:px-8">
         <div className="flex items-center justify-center">
           <Link to={"/"}>
-            <img src="/assets/img/ankitydv.png" width={110} height={5} alt="logo" />
+            <img
+              src="/assets/img/ankitydv.png"
+              width={110}
+              height={5}
+              alt="logo"
+            />
           </Link>
         </div>
         <div className="hidden lg:flex space-x-8">
-          <Link to={"https://resume.ankitydv.me"} target="_blank" className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
+          <Link
+            to={"https://resume.ankitydv.me"}
+            target="_blank"
+            className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
             Resume
           </Link>
-          <Link to={"https://heyankit.hashnode.dev"} target="_blank" className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
+          <Link
+            to={"https://heyankit.hashnode.dev"}
+            target="_blank"
+            className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
             Blogs
           </Link>
-          <Link to={"https://github.com/ydv-ankit"} target="_blank" className="p-2 m-2 cursor-pointer font-medium flex items-center justify-center rounded-md hover:text-blue-500">
+          <Link
+            to={"https://github.com/ydv-ankit"}
+            target="_blank"
+            className="p-2 m-2 cursor-pointer font-medium flex items-center justify-center rounded-md hover:text-blue-500">
             <FaGithub /> <span className="mx-2">GitHub</span>
           </Link>
         </div>
@@ -48,7 +62,10 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-              <Link to={"https://heyankit.hashnode.dev"} target="_blank" onClick={toggleMenu}>
+              <Link
+                to={"https://heyankit.hashnode.dev"}
+                target="_blank"
+                onClick={toggleMenu}>
                 Blogs
               </Link>
             </li>
