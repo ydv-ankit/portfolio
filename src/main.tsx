@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotFound from "./components/404.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<>
+	<div className="bg-[#0a072c]">
 		<BrowserRouter>
 			<Navbar />
 			<Routes>
@@ -16,5 +16,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 			</Routes>
 			<Footer />
 		</BrowserRouter>
-	</>
+	</div>
 );
