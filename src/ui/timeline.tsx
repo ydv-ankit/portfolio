@@ -1,5 +1,5 @@
 "use client";
-import { useScroll, useTransform, motion } from "motion/react";
+import { useScroll } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -23,9 +23,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 		target: containerRef,
 		offset: ["start 10%", "end 50%"],
 	});
-
-	const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-	const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
 	return (
 		<div className="w-full bg-none font-sans md:px-10" ref={containerRef}>
