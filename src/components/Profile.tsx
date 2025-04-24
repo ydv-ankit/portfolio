@@ -67,7 +67,7 @@ const Profile = () => {
 					Crafting Dynamic Web Experiences with MERN Precision
 				</div>
 				<div className="flex">
-					<Link to={"https://resume.ankitydv.me"} target="_blank">
+					<Link to={"https://resume.ankitydv.in"} target="_blank">
 						<button className="bg-slate-500 bg-opacity-30 border-x border-y outline-none px-4 py-2 rounded-md m-2 hover:bg-white duration-100 hover:duration-300 hover:text-blue-600 font-semibold">
 							Resume
 						</button>
