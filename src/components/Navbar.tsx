@@ -24,7 +24,7 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex space-x-8">
           <Link
-            to={"https://resume.ankitydv.me"}
+            to={"https://resume.ankitydv.in"}
             target="_blank"
             className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
             Resume
@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="lg:hidden bg-[#21263d] text-white shadow-lg">
           <ul className="flex flex-col items-center">
             <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-              <Link to={"https://resume.ankitydv.me"} onClick={toggleMenu}>
+              <Link to={"https://resume.ankitydv.in"} onClick={toggleMenu}>
                 Resume
               </Link>
             </li>
