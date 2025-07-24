@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 import { project } from "../utils/projects";
 
 const ProjectsSection = ({ projects }: { projects: project[] }) => {
-  const projectsPerPage = 4;
+  const projectsPerPage = 6;
 
   const totalPages = Math.ceil(projects.length / projectsPerPage);
 

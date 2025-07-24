@@ -1,18 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ProjectType } from "../types";
 
-export default function ProjectCard({
-  project,
-}: {
-  project: {
-    title: string;
-    cover: string;
-    tags: string[];
-    desc: string;
-    code_link: string;
-    deploy_link: string;
-  };
-}) {
+export default function ProjectCard({ project }: { project: ProjectType  }) {
   return (
     <motion.div
       className="w-80 relative sm:w-full border-[1px] border-gray-800 shadow-lg shadow-zinc-700 duration-200 hover:duration-400 hover:shadow-blue-500 overflow-hidden mt-4"
@@ -27,13 +17,23 @@ export default function ProjectCard({
           target="_blank"
           to={project?.code_link || "#"}
           className="sm:flex">
-          <div className="absolute -top-4 -right-10 z-10 origin-center rotate-45 bg-blue-600 w-24 h-14 flex place-items-end justify-center cursor-pointer hover:scale-125">
-            <img
-              src="/assets/img/github.png"
-              alt="code"
-              className="h-6 w-6 mb-1"
-            />
-          </div>
+          <motion.div 
+            initial={{
+              scale: 1,
+              rotate: 45,
+            }}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.2 },
+              rotate: 45,
+            }}
+            className="absolute -top-4 -right-10 z-10 origin-center bg-blue-600 w-24 h-14 flex place-items-end justify-center cursor-pointer hover:scale-125">
+              <img
+                src="/assets/img/github.png"
+                alt="code"
+                className="h-6 w-6 mb-1"
+              />
+          </motion.div>
         </Link>
       ) : (
         <></>

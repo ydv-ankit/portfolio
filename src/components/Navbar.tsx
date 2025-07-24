@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed inset-x-0 bg-[#21263d] z-40 shadow-lg -top-1 md:bg-transparent md:hover:bg-[#21263d] transition-all">
+    <nav className="fixed inset-x-0 bg-[#19153b] z-40 shadow-lg -top-1 md:bg-transparent md:hover:bg-[#19153b] transition-all">
       <div className="container flex mx-auto justify-between lg:justify-around items-center text-white px-4 lg:px-8">
         <div className="flex items-center justify-center">
           <Link to={"/"}>

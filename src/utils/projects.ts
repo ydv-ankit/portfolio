@@ -9,20 +9,28 @@ export interface project {
 
 export const projects: project[] = [
 	{
+		title: "AI Video Summarizer",
+		cover: "/assets/projects/video_summarizer.png",
+		tags: ["typescript", "reactjs", "google-gemini", "nodejs", "zustand", "python", "ffmpeg", "postgresql", "docker", "fastapi"],
+		code_link: "https://github.com/ydv-ankit/ai-video-summarizer",
+		deploy_link: "https://summarizer.ankitydv.in/",
+		desc: "Built an AI video summarizer that allows users to upload a video and get summary of the video. It uses the Google Gemini API to generate the summary.",
+	},
+	{
 		title: "AI Quiz Generator",
 		cover: "/assets/projects/ai_quiz_arch.png",
 		tags: ["typescript", "nextjs", "appwrite", "nodejs", "api"],
 		code_link: "https://github.com/ydv-ankit/ai-quiz-generator",
-		deploy_link: "https://ai-quiz-generator-rose.vercel.app/",
+		deploy_link: "https://quiz.ankitydv.in/",
 		desc: "Built an AI quiz generator that allows users to create MCQ-based quizzes tailored to their needs based on subject, topics, difficulty level, and number of questions—all in just a few clicks, all in just a click",
 	},
 	{
-		title: "Security Manager",
+		title: "Secure Creds",
 		cover: "/assets/projects/security-manager-arch.png",
 		tags: ["typescript", "docker", "aws", "security", "AES algorithm", "node js"],
 		code_link: "https://github.com/ydv-ankit/security-manager-server",
-		deploy_link: "https://keys.ankitydv.me",
-		desc: "Implemented encryption algorithm to securely save data (user credentials) to database. Built in typescript along with github actions & AWS for CI/CD pipeline.",
+		deploy_link: "https://keys.ankitydv.in/",
+		desc: "Secure Creds is a secure password manager that allows users to securely save their passwords and other sensitive data. It uses the AES algorithm to encrypt the data and the data is stored in a PostgreSQL database.",
 	},
 	{
 		title: "CryptoStats",
