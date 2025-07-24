@@ -33,15 +33,6 @@ export interface project {
 
 export const projects: project[] = [
 	{
-		title: "Multithreaded Proxy Server with caching",
-		cover: "/assets/projects/proxy_server.png",
-		tags: ["c", "multithreading", "caching", "tcp", "sockets", "linux"],
-		code_links: [],
-		deploy_link: "https://github.com/ydv-ankit/multi-threaded-proxy-server",
-		desc: "Built a multithreaded proxy server with caching that can handle multiple requests concurrently. It uses the TCP sockets to communicate with the client and the server. It uses the Linux system calls to implement the caching mechanism.",
-		categories: [ProjectCategory.DEVOPS, ProjectCategory.BACKEND, ProjectCategory.TOOLS],
-	},
-	{
 		title: "LiveDocs",
 		cover: "/assets/projects/livedocs.png",
 		tags: ["typescript", "reactjs", "sentry", "clerk", "tailwindcss", "nextjs", "liveblocks"],
@@ -50,7 +41,7 @@ export const projects: project[] = [
 		],
 		deploy_link: "https://livedocs.ankitydv.in/",
 		desc: "LiveDocs is a platform that allows users to create and share documents with others. It uses the NextJS framework to create a frontend and the Liveblocks library to create a real-time collaborative document.",
-		categories: [ProjectCategory.FULLSTACK, ProjectCategory.FRONTEND],
+		categories: [ProjectCategory.FULLSTACK, ProjectCategory.FRONTEND, ProjectCategory.BACKEND],
 	},
 	{
 		title: "AI Video Summarizer",
@@ -74,6 +65,26 @@ export const projects: project[] = [
 		deploy_link: "https://quiz.ankitydv.in/",
 		desc: "Built an AI quiz generator that allows users to create MCQ-based quizzes tailored to their needs based on subject, topics, difficulty level, and number of questions—all in just a few clicks, all in just a click",
 		categories: [ProjectCategory.AI, ProjectCategory.FRONTEND],
+	},
+	{
+		title: "File Encryptor",
+		cover: "/assets/projects/file_encryptor.png",
+		tags: ["golang", "cryptography", "cli", "ci/cd", "TEA", "gh-actions"],
+		code_links: [
+			{ label: "CLI", url: "https://github.com/ydv-ankit/file-encryptor", icon: CodeLinkIcon.CLI },
+		],
+		deploy_link: "https://github.com/ydv-ankit/file-encryptor/releases/",
+		desc: "Built a CLI tool that allows users to encrypt and decrypt files using the TEA algorithm. Used the Golang to implement the algorithm and build the CLI app. It uses the GitHub Actions to automate the build and release process.",
+		categories: [ProjectCategory.TOOLS, ProjectCategory.DEVOPS],
+	},
+	{
+		title: "Multithreaded Proxy Server with caching",
+		cover: "/assets/projects/proxy_server.png",
+		tags: ["c", "multithreading", "caching", "tcp", "sockets", "linux"],
+		code_links: [],
+		deploy_link: "https://github.com/ydv-ankit/multi-threaded-proxy-server",
+		desc: "Built a multithreaded proxy server with caching that can handle multiple requests concurrently. It uses the TCP sockets to communicate with the client and the server. It uses the Linux system calls to implement the caching mechanism.",
+		categories: [ProjectCategory.DEVOPS, ProjectCategory.BACKEND, ProjectCategory.TOOLS],
 	},
 	{
 		title: "Secure Creds",
