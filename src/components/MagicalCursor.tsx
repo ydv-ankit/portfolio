@@ -10,7 +10,7 @@ export default function MagicalCursor() {
   const mouseY = useMotionValue(0);
   
   // Smooth spring animations
-  const springConfig = { damping: 25, stiffness: 700 };
+  const springConfig = { damping: 30, stiffness: 700 };
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
   
@@ -79,119 +79,202 @@ export default function MagicalCursor() {
 
 
 
-      {/* Hover Sparkles */}
-      <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9997]"
-        style={{
-          x: cursorX,
-          y: cursorY,
-        }}
-        animate={{
-          opacity: isHovering ? 1 : 0,
-          scale: isHovering ? 1 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="w-16 h-16 -translate-x-1/2 -translate-y-1/2">
-          <svg width="64" height="64" viewBox="0 0 64 64">
-            {/* Sparkle 1 - Top */}
-            <motion.polygon
-              points="32,8 34,12 32,16 30,12"
-              fill="gold"
-              className="drop-shadow-lg"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.7, 1, 0.7],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-            {/* Sparkle 2 - Right */}
-            <motion.polygon
-              points="56,32 52,34 48,32 52,30"
-              fill="cyan"
-              className="drop-shadow-lg"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.7, 1, 0.7],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.3,
-              }}
-            />
-            {/* Sparkle 3 - Bottom */}
-            <motion.polygon
-              points="32,56 30,52 26,50 30,48"
-              fill="magenta"
-              className="drop-shadow-lg"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.7, 1, 0.7],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.6,
-              }}
-            />
-            {/* Sparkle 4 - Left */}
-            <motion.polygon
-              points="8,32 12,30 16,32 12,34"
-              fill="yellow"
-              className="drop-shadow-lg"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.7, 1, 0.7],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.9,
-              }}
-            />
-            {/* Sparkle 5 - Top Right */}
-            <motion.polygon
-              points="44,20 42,24 38,22 42,18"
-              fill="lime"
-              className="drop-shadow-lg"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.7, 1, 0.7],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1.2,
-              }}
-            />
-            {/* Sparkle 6 - Bottom Left */}
-            <motion.polygon
-              points="20,44 22,40 26,42 22,46"
-              fill="orange"
-              className="drop-shadow-lg"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.7, 1, 0.7],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1.5,
-              }}
-            />
-          </svg>
-        </div>
-      </motion.div>
+      {/* Burst Sparkles */}
+      {isHovering && (
+        <motion.div
+          className="fixed top-0 left-0 pointer-events-none z-[9997]"
+          style={{
+            x: cursorX,
+            y: cursorY,
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          {/* Sparkle 1 - Top */}
+          <motion.div
+            className="absolute w-2 h-2 bg-yellow-400 rounded-full"
+            style={{ left: '50%', top: '50%' }}
+            initial={{ 
+              x: 0, 
+              y: 0, 
+              opacity: 1, 
+              scale: 0 
+            }}
+            animate={{ 
+              x: 0, 
+              y: -40, 
+              opacity: 0, 
+              scale: 1 
+            }}
+            transition={{ 
+              duration: 0.8, 
+              ease: "easeOut" 
+            }}
+          />
+          
+          {/* Sparkle 2 - Top Right */}
+          <motion.div
+            className="absolute w-2 h-2 bg-cyan-400 rounded-full"
+            style={{ left: '50%', top: '50%' }}
+            initial={{ 
+              x: 0, 
+              y: 0, 
+              opacity: 1, 
+              scale: 0 
+            }}
+            animate={{ 
+              x: 28, 
+              y: -28, 
+              opacity: 0, 
+              scale: 1 
+            }}
+            transition={{ 
+              duration: 0.8, 
+              ease: "easeOut",
+              delay: 0.1 
+            }}
+          />
+          
+          {/* Sparkle 3 - Right */}
+          <motion.div
+            className="absolute w-2 h-2 bg-pink-400 rounded-full"
+            style={{ left: '50%', top: '50%' }}
+            initial={{ 
+              x: 0, 
+              y: 0, 
+              opacity: 1, 
+              scale: 0 
+            }}
+            animate={{ 
+              x: 40, 
+              y: 0, 
+              opacity: 0, 
+              scale: 1 
+            }}
+            transition={{ 
+              duration: 0.8, 
+              ease: "easeOut",
+              delay: 0.2 
+            }}
+          />
+          
+          {/* Sparkle 4 - Bottom Right */}
+          <motion.div
+            className="absolute w-2 h-2 bg-green-400 rounded-full"
+            style={{ left: '50%', top: '50%' }}
+            initial={{ 
+              x: 0, 
+              y: 0, 
+              opacity: 1, 
+              scale: 0 
+            }}
+            animate={{ 
+              x: 28, 
+              y: 28, 
+              opacity: 0, 
+              scale: 1 
+            }}
+            transition={{ 
+              duration: 0.8, 
+              ease: "easeOut",
+              delay: 0.3 
+            }}
+          />
+          
+          {/* Sparkle 5 - Bottom */}
+          <motion.div
+            className="absolute w-2 h-2 bg-orange-400 rounded-full"
+            style={{ left: '50%', top: '50%' }}
+            initial={{ 
+              x: 0, 
+              y: 0, 
+              opacity: 1, 
+              scale: 0 
+            }}
+            animate={{ 
+              x: 0, 
+              y: 40, 
+              opacity: 0, 
+              scale: 1 
+            }}
+            transition={{ 
+              duration: 0.8, 
+              ease: "easeOut",
+              delay: 0.4 
+            }}
+          />
+          
+          {/* Sparkle 6 - Bottom Left */}
+          <motion.div
+            className="absolute w-2 h-2 bg-purple-400 rounded-full"
+            style={{ left: '50%', top: '50%' }}
+            initial={{ 
+              x: 0, 
+              y: 0, 
+              opacity: 1, 
+              scale: 0 
+            }}
+            animate={{ 
+              x: -28, 
+              y: 28, 
+              opacity: 0, 
+              scale: 1 
+            }}
+            transition={{ 
+              duration: 0.8, 
+              ease: "easeOut",
+              delay: 0.5 
+            }}
+          />
+          
+          {/* Sparkle 7 - Left */}
+          <motion.div
+            className="absolute w-2 h-2 bg-red-400 rounded-full"
+            style={{ left: '50%', top: '50%' }}
+            initial={{ 
+              x: 0, 
+              y: 0, 
+              opacity: 1, 
+              scale: 0 
+            }}
+            animate={{ 
+              x: -40, 
+              y: 0, 
+              opacity: 0, 
+              scale: 1 
+            }}
+            transition={{ 
+              duration: 0.8, 
+              ease: "easeOut",
+              delay: 0.6 
+            }}
+          />
+          
+          {/* Sparkle 8 - Top Left */}
+          <motion.div
+            className="absolute w-2 h-2 bg-blue-400 rounded-full"
+            style={{ left: '50%', top: '50%' }}
+            initial={{ 
+              x: 0, 
+              y: 0, 
+              opacity: 1, 
+              scale: 0 
+            }}
+            animate={{ 
+              x: -28, 
+              y: -28, 
+              opacity: 0, 
+              scale: 1 
+            }}
+            transition={{ 
+              duration: 0.8, 
+              ease: "easeOut",
+              delay: 0.7 
+            }}
+          />
+        </motion.div>
+      )}
     </>
   );
 } 
