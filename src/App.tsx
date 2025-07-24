@@ -1,13 +1,15 @@
 import { Experience } from "./components/Experience";
-import ProjectsSection from "./components/Pagination";
+import ProjectsSection from "./components/ProjectsSection";
 import Profile from "./components/Profile";
 import Skills from "./components/Skills";
+import MagicalCursor from "./components/MagicalCursor";
 import { projects } from "./utils/projects";
 import { motion } from "framer-motion";
 
 const App = () => {
 	return (
-		<div className="overflow-hidden">
+		<div className="overflow-hidden cursor-none">
+			<MagicalCursor />
 			<div className="lg:w-3/5 w-[95vw] mx-auto min-h-screen text-white">
 				<div className="h-32"></div>
 				<Profile />

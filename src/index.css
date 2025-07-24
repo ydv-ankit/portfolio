@@ -28,3 +28,25 @@
 * {
 	scroll-behavior: smooth !important;
 }
+
+/* Hide default cursor globally */
+* {
+	cursor: none !important;
+}
+
+/* Show default cursor for interactive elements on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+	* {
+		cursor: auto !important;
+	}
+}
+
+/* Interactive elements styling for magical cursor */
+a, button, [role="button"], input, textarea, select {
+	cursor: none !important;
+}
+
+/* Ensure magical cursor works well with interactive elements */
+a:hover, button:hover, [role="button"]:hover {
+	cursor: none !important;
+}

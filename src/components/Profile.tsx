@@ -63,8 +63,13 @@ const Profile = () => {
 						<FaTwitter className="text-blue-200" />
 					</Link>
 				</div>
-				<div className="mt-4 mb-4 text-xl text-blue-100 text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-green-400 w-80 text-wrap text-center">
-					Crafting Dynamic Web Experiences with MERN Precision
+				<div className="mt-6 mb-6 relative">
+					<div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-green-500/20 blur-xl rounded-full"></div>
+					<div className="relative bg-gradient-to-r from-blue-600/10 to-green-600/10 backdrop-blur-sm rounded-2xl px-8 py-4 shadow-2xl">
+						<div className="text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-green-300 text-center leading-relaxed">
+							Transforming Ideas into Powerful Digital Solutions
+						</div>
+					</div>
 				</div>
 				<div className="flex">
 					<Link to={"https://resume.ankitydv.in"} target="_blank">

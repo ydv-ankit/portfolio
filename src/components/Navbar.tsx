@@ -1,16 +1,33 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaGithub, FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed inset-x-0 bg-[#19153b] z-40 shadow-lg -top-1 md:bg-transparent md:hover:bg-[#19153b] transition-all">
+    <nav
+      className={`fixed inset-x-0 bg-[#19153b] z-40 shadow-lg -top-1 md:bg-transparent md:hover:bg-[#19153b] hover:opacity-100 transition-all duration-500 ${
+        scrolled ? "opacity-10" : "opacity-100"
+      }`}
+    >
       <div className="container flex mx-auto justify-between lg:justify-around items-center text-white px-4 lg:px-8">
         <div className="flex items-center justify-center">
           <Link to={"/"}>
