@@ -17,7 +17,7 @@ const experienceData = [
 		title: "Frontend Developer",
 		content: (
 			<div>
-				<p className="text-white dark:text-white text-sm md:text-base max-w-sm">College Website</p>
+				<p className="text-white dark:text-white text-sm md:text-base max-w-sm">University Website</p>
 				<p className="text-white dark:text-white text-sm md:text-base max-w-sm">
 					August 2023 - May 2024
 				</p>

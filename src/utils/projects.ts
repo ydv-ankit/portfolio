@@ -33,6 +33,17 @@ export interface project {
 
 export const projects: project[] = [
 	{
+		title: "AI Quiz Generator",
+		cover: "/assets/projects/ai_quiz_arch.png",
+		tags: ["typescript", "nextjs", "appwrite", "nodejs", "api"],
+		code_links: [
+			{ label: "Frontend", url: "https://github.com/ydv-ankit/ai-quiz-generator", icon: CodeLinkIcon.FRONTEND }
+		],
+		deploy_link: "https://quiz.ankitydv.in/",
+		desc: "Built an AI quiz generator that allows users to create MCQ-based quizzes tailored to their needs based on subject, topics, difficulty level, and number of questions—all in just a few clicks, all in just a click",
+		categories: [ProjectCategory.AI, ProjectCategory.FRONTEND],
+	},
+	{
 		title: "LiveDocs",
 		cover: "/assets/projects/livedocs.png",
 		tags: ["typescript", "reactjs", "sentry", "clerk", "tailwindcss", "nextjs", "liveblocks"],
@@ -54,17 +65,6 @@ export const projects: project[] = [
 		deploy_link: "https://summarizer.ankitydv.in/",
 		desc: "Built an AI video summarizer that allows users to upload a video and get summary of the video. It uses the Google Gemini API to generate the summary.",
 		categories: [ProjectCategory.AI, ProjectCategory.FULLSTACK],
-	},
-	{
-		title: "AI Quiz Generator",
-		cover: "/assets/projects/ai_quiz_arch.png",
-		tags: ["typescript", "nextjs", "appwrite", "nodejs", "api"],
-		code_links: [
-			{ label: "Frontend", url: "https://github.com/ydv-ankit/ai-quiz-generator", icon: CodeLinkIcon.FRONTEND }
-		],
-		deploy_link: "https://quiz.ankitydv.in/",
-		desc: "Built an AI quiz generator that allows users to create MCQ-based quizzes tailored to their needs based on subject, topics, difficulty level, and number of questions—all in just a few clicks, all in just a click",
-		categories: [ProjectCategory.AI, ProjectCategory.FRONTEND],
 	},
 	{
 		title: "File Encryptor",
