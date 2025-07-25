@@ -1,89 +1,109 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import Typed from "typed.js";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
-import { CiAt } from "react-icons/ci";
+import { motion } from "framer-motion";
+import { CgMail } from "react-icons/cg";
 
 const Profile = () => {
-	const el = React.useRef(null);
-
-	React.useEffect(() => {
-		const typed = new Typed(el.current, {
-			strings: ["Full Stack Developer", "DevOps Guy"],
-			typeSpeed: 60,
-			loop: true,
-			backSpeed: 40,
-			backDelay: 300,
-		});
-
-		return () => {
-			typed.destroy();
-		};
-	}, []);
-
 	return (
-		<div className="relative overflow-hidden">
-			<div
-				className="absolute inset-0 lg:rounded-3xl hidden lg:block space-x-4 opacity-30"
-				style={{
-					background: `url("/assets/img/profile_bg.png")`,
-					backgroundRepeat: "no-repeat",
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					filter: "brightness(0.6) ",
-				}}></div>
-			<div className="relative flex flex-col items-center justify-center min-h-[30rem] py-24">
-				<img
-					width={192}
-					height={192}
-					className="rounded-full border-4 border-blue-200"
-					src="/assets/img/profile.jpeg"
-					alt="profile pic"
-				/>
-				<div className="text-4xl font-bold m-2 relative text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-300 font-mono">
-					Ankit Yadav
-				</div>
-				<div className="text-2xl font-bold m-2">
-					<span ref={el} />
-				</div>
-				<div className="flex mt-2">
-					<Link to="mailto:ankityadav11241@gmail.com" className="text-2xl mx-2">
-						<CiAt className="text-blue-200" />
+		<div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden w-full mx-auto">
+			{/* Main Content */}
+			<motion.div 
+				className="relative z-10 text-center w-full max-w-4xl mx-auto px-6"
+				initial={{ opacity: 0, y: 50 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1 }}
+			>
+				{/* Profile Image Container */}
+				<motion.div 
+					className="relative mb-8 flex justify-center"
+					initial={{ scale: 0 }}
+					animate={{ scale: 1 }}
+					transition={{ duration: 0.8, delay: 0.2 }}
+				>
+					{/* Profile Image */}
+					<div className="relative">
+						<img
+							width={200}
+							height={200}
+							className="rounded-full border-4 border-neon-blue shadow-2xl shadow-neon-blue/50 relative z-10"
+							src="/assets/img/profile.jpeg"
+							alt="Ankit Yadav"
+						/>
+					</div>
+				</motion.div>
+
+				{/* Name */}
+				<motion.h1 
+					className="text-6xl font-cyber font-black mb-4 neon-text text-neon-blue text-center"
+					initial={{ opacity: 0, x: -50 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{ duration: 0.8, delay: 0.4 }}
+				>
+					ANKIT YADAV
+				</motion.h1>
+
+				{/* Social Links */}
+				<motion.div 
+					className="flex justify-center gap-6 mb-8"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.8 }}
+				>
+					<Link to="mailto:ankityadav11241@gmail.com" className="group">
+						<div className="w-12 h-12 glass rounded-full flex items-center justify-center border border-neon-blue/30 hover:border-neon-blue transition-all duration-300 group-hover:scale-110">
+							<CgMail className="text-2xl text-neon-blue group-hover:text-neon-cyan transition-colors" />
+						</div>
 					</Link>
-					<Link
-						to="https://www.linkedin.com/in/ankityadav1121"
-						className="text-2xl mx-2"
-						target="_blank">
-						<FaLinkedin className="text-blue-200" />
+					<Link to="https://www.linkedin.com/in/ankityadav1121" target="_blank" className="group">
+						<div className="w-12 h-12 glass rounded-full flex items-center justify-center border border-neon-blue/30 hover:border-neon-blue transition-all duration-300 group-hover:scale-110">
+							<FaLinkedin className="text-2xl text-neon-blue group-hover:text-neon-cyan transition-colors" />
+						</div>
 					</Link>
-					<Link to="https://github.com/ydv-ankit" className="text-2xl mx-2" target="_blank">
-						<FaGithub className="text-blue-200" />
+					<Link to="https://github.com/ydv-ankit" target="_blank" className="group">
+						<div className="w-12 h-12 glass rounded-full flex items-center justify-center border border-neon-blue/30 hover:border-neon-blue transition-all duration-300 group-hover:scale-110">
+							<FaGithub className="text-2xl text-neon-blue group-hover:text-neon-cyan transition-colors" />
+						</div>
 					</Link>
-					<Link to="https://twitter.com/ydvtwts" className="text-2xl mx-2" target="_blank">
-						<FaTwitter className="text-blue-200" />
+					<Link to="https://twitter.com/ydvtwts" target="_blank" className="group">
+						<div className="w-12 h-12 glass rounded-full flex items-center justify-center border border-neon-blue/30 hover:border-neon-blue transition-all duration-300 group-hover:scale-110">
+							<FaTwitter className="text-2xl text-neon-blue group-hover:text-neon-cyan transition-colors" />
+						</div>
 					</Link>
-				</div>
-				<div className="mt-6 mb-6 relative">
-					<div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-green-500/20 blur-xl rounded-full"></div>
-					<div className="relative bg-gradient-to-r from-blue-600/10 to-green-600/10 backdrop-blur-sm rounded-2xl px-8 py-4 shadow-2xl">
-						<div className="text-xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-cyan-300 to-green-300 text-center leading-relaxed">
-							Transforming Ideas into Powerful Digital Solutions
+				</motion.div>
+
+				{/* Tagline */}
+				<motion.div 
+					className="mb-8 flex justify-center"
+					initial={{ opacity: 0, scale: 0.8 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.8, delay: 1 }}
+				>
+					<div className="glass-strong rounded-2xl px-8 py-6 border border-neon-blue/20 max-w-2xl">
+						<div className="text-xl font-futura font-medium text-neon-cyan leading-relaxed text-center">
+							"Transforming Ideas into Powerful Digital Solutions"
 						</div>
 					</div>
-				</div>
-				<div className="flex">
-					<Link to={"https://resume.ankitydv.in"} target="_blank">
-						<button className="bg-slate-500 bg-opacity-30 border-x border-y outline-none px-4 py-2 rounded-md m-2 hover:bg-white duration-100 hover:duration-300 hover:text-blue-600 font-semibold">
-							Resume
+				</motion.div>
+
+				{/* Action Buttons */}
+				<motion.div 
+					className="flex flex-wrap justify-center gap-4 mb-12"
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 1.2 }}
+				>
+					<Link to="https://resume.ankitydv.in" target="_blank">
+						<button className="btn-futuristic">
+							<span className="relative z-10">VIEW RESUME</span>
 						</button>
 					</Link>
-					<Link to={"mailto:ankityadav11241@gmail.com"}>
-						<button className="bg-slate-500 bg-opacity-30 border-x border-y outline-none px-4 py-2 rounded-md m-2 hover:bg-white duration-100 hover:duration-300 hover:text-blue-600 font-semibold">
-							Hire Me
+					<Link to="mailto:ankityadav11241@gmail.com">
+						<button className="btn-futuristic bg-gradient-to-r from-neon-purple to-neon-pink">
+							<span className="relative z-10">HIRE ME</span>
 						</button>
 					</Link>
-				</div>
-			</div>
+				</motion.div>
+			</motion.div>
 		</div>
 	);
 };

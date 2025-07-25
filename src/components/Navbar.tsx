@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { FaGithub, FaTimes } from "react-icons/fa";
-import { FaBars } from "react-icons/fa";
+import { FaGithub, FaTimes, FaBars } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -23,73 +24,155 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed inset-x-0 bg-[#19153b] z-40 shadow-lg -top-1 md:bg-transparent md:hover:bg-[#19153b] hover:opacity-100 transition-all duration-500 ${
-        scrolled ? "opacity-10" : "opacity-100"
+    <motion.nav
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? "border-b border-neon-blue/20 backdrop-blur-md" 
+          : "bg-transparent"
       }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
     >
-      <div className="container flex mx-auto justify-between lg:justify-around items-center text-white px-4 lg:px-8">
-        <div className="flex items-center justify-center">
-          <Link to={"/"}>
-            <img
-              src="/assets/img/ankitydv.png"
-              width={110}
-              height={5}
-              alt="logo"
-            />
-          </Link>
-        </div>
-        <div className="hidden lg:flex space-x-8">
-          <Link
-            to={"https://resume.ankitydv.in"}
-            target="_blank"
-            className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            Resume
-          </Link>
-          <Link
-            to={"https://heyankit.hashnode.dev"}
-            target="_blank"
-            className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-            Blogs
-          </Link>
-          <Link
-            to={"https://github.com/ydv-ankit"}
-            target="_blank"
-            className="p-2 m-2 cursor-pointer font-medium flex items-center justify-center rounded-md hover:text-blue-500">
-            <FaGithub /> <span className="mx-2">GitHub</span>
-          </Link>
-        </div>
-        <div className="lg:hidden flex items-center sm:mr-8">
-          <div className="p-2 cursor-pointer">
-            <Link to={"https://github.com/ydv-ankit"} target="_blank">
-              <FaGithub />
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="flex justify-between items-center h-16 lg:h-20">
+          {/* Logo */}
+          <motion.div 
+            className="flex items-center"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Link to={"/"}>
+              <img
+                src="/assets/img/ankitydv.png"
+                width={110}
+                height={5}
+                alt="logo"
+                className="filter brightness-0 invert"
+              />
             </Link>
-          </div>
-          <div className="p-2 cursor-pointer" onClick={toggleMenu}>
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </div>
-        </div>
-      </div>
-      {isOpen && (
-        <div className="lg:hidden bg-[#21263d] text-white shadow-lg">
-          <ul className="flex flex-col items-center">
-            <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
-              <Link to={"https://resume.ankitydv.in"} onClick={toggleMenu}>
-                Resume
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+              <Link
+                to={"https://resume.ankitydv.in"}
+                target="_blank"
+                className="px-4 py-2 font-tech text-neon-cyan hover:text-neon-blue transition-colors duration-300 relative group"
+              >
+                <span className="relative z-10">RESUME</span>
+                <div className="absolute inset-0 glass rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-neon-blue/20"></div>
               </Link>
-            </li>
-            <li className="p-2 m-2 cursor-pointer font-medium hover:text-blue-500 rounded-md">
+            </motion.div>
+            
+            <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
               <Link
                 to={"https://heyankit.hashnode.dev"}
                 target="_blank"
-                onClick={toggleMenu}>
-                Blogs
+                className="px-4 py-2 font-tech text-neon-cyan hover:text-neon-blue transition-colors duration-300 relative group"
+              >
+                <span className="relative z-10">BLOGS</span>
+                <div className="absolute inset-0 glass rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-neon-blue/20"></div>
               </Link>
-            </li>
-          </ul>
+            </motion.div>
+            
+            <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+              <Link
+                to={"https://github.com/ydv-ankit"}
+                target="_blank"
+                className="px-4 py-2 font-tech text-neon-cyan hover:text-neon-blue transition-colors duration-300 flex items-center gap-2 relative group"
+              >
+                <FaGithub className="text-lg" />
+                <span className="relative z-10">GITHUB</span>
+                <div className="absolute inset-0 glass rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-neon-blue/20"></div>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden flex items-center space-x-4">
+            <motion.div 
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Link 
+                to={"https://github.com/ydv-ankit"} 
+                target="_blank"
+                className="p-2 text-neon-cyan hover:text-neon-blue transition-colors duration-300"
+              >
+                <FaGithub className="text-xl" />
+              </Link>
+            </motion.div>
+            
+            <motion.button
+              onClick={toggleMenu}
+              className="p-2 text-neon-cyan hover:text-neon-blue transition-colors duration-300 relative group"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="relative z-10">
+                {isOpen ? <FaTimes className="text-xl" /> : <FaBars className="text-xl" />}
+              </div>
+              <div className="absolute inset-0 glass rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-neon-blue/20"></div>
+            </motion.button>
+          </div>
         </div>
-      )}
-    </nav>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="lg:hidden backdrop-blur-md"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="container mx-auto px-4 py-4">
+              <motion.div 
+                className="flex flex-col space-y-4"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Link
+                    to={"https://resume.ankitydv.in"}
+                    target="_blank"
+                    onClick={toggleMenu}
+                    className="block px-4 py-3 font-tech text-neon-cyan hover:text-neon-blue transition-colors duration-300 glass rounded-lg border border-neon-blue/10 hover:border-neon-blue/30"
+                  >
+                    RESUME
+                  </Link>
+                </motion.div>
+                
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Link
+                    to={"https://heyankit.hashnode.dev"}
+                    target="_blank"
+                    onClick={toggleMenu}
+                    className="block px-4 py-3 font-tech text-neon-cyan hover:text-neon-blue transition-colors duration-300 glass rounded-lg border border-neon-blue/10 hover:border-neon-blue/30"
+                  >
+                    BLOGS
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 

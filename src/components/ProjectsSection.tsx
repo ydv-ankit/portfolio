@@ -85,7 +85,11 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 1300, behavior: 'smooth' });
+    // Scroll to the projects section instead of a fixed position
+    const projectsSection = document.getElementById('projects-section');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (
@@ -99,10 +103,10 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
             placeholder="Search projects by title, description, or tags..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
+            className="w-full px-4 py-3 input-futuristic font-tech placeholder-neon-blue/50"
           />
           <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-neon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
@@ -114,10 +118,10 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
             <motion.button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-4 py-2 rounded-full border transition-all duration-300 flex items-center gap-2 ${
+              className={`px-4 py-2 rounded-full border transition-all duration-300 flex items-center gap-2 font-tech ${
                 selectedCategory === category.id
-                  ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-600/25"
-                  : "bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700 hover:border-gray-600"
+                  ? "glass-strong border-neon-blue text-neon-blue shadow-lg shadow-neon-blue/25 neon-text"
+                  : "glass border-neon-blue/30 text-neon-blue/70 hover:border-neon-blue hover:text-neon-blue"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -127,7 +131,7 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
               {selectedCategory === category.id && (
                 <motion.div
                   layoutId="activeCategory"
-                  className="absolute inset-0 bg-blue-600 rounded-full -z-10"
+                  className="absolute inset-0 glass-strong border-neon-blue rounded-full -z-10"
                   initial={false}
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
@@ -137,7 +141,7 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
         </div>
 
         {/* Results Count */}
-        <div className="text-gray-400 text-sm">
+        <div className="text-neon-blue/70 text-sm font-tech">
           Showing {currentProjects.length} of {filteredProjects.length} projects
           {selectedCategory !== "all" && (
             <span> in {categories.find(c => c.id === selectedCategory)?.name}</span>
@@ -157,7 +161,7 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 2xl:grid-cols-3"
+            className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           >
             {currentProjects.map((project, index) => (
               <motion.div
@@ -177,10 +181,10 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
             className="text-center py-12"
           >
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-xl font-semibold text-gray-300 mb-2">
+            <h3 className="text-xl font-cyber font-semibold text-neon-blue mb-2">
               No projects found
             </h3>
-            <p className="text-gray-500">
+            <p className="text-neon-blue/70 font-futura">
               Try adjusting your search terms or category filter
             </p>
           </motion.div>
@@ -198,10 +202,10 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
           <motion.button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`px-4 py-2 rounded-lg border transition-all duration-300 flex items-center gap-2 ${
+            className={`px-4 py-2 rounded-lg border transition-all duration-300 flex items-center gap-2 font-tech ${
               currentPage === 1
-                ? "bg-gray-800 border-gray-700 text-gray-500 cursor-not-allowed"
-                : "bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700 hover:border-gray-600"
+                ? "glass border-neon-blue/20 text-neon-blue/30 cursor-not-allowed"
+                : "glass border-neon-blue/30 text-neon-blue hover:border-neon-blue hover:text-neon-cyan"
             }`}
             whileHover={currentPage !== 1 ? { scale: 1.05 } : {}}
             whileTap={currentPage !== 1 ? { scale: 0.95 } : {}}
@@ -226,10 +230,10 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
                   <motion.button
                     key={page}
                     onClick={() => handlePageChange(pageNumber)}
-                    className={`px-3 py-2 rounded-lg border transition-all duration-300 ${
+                    className={`px-3 py-2 rounded-lg border transition-all duration-300 font-tech ${
                       isCurrentPage
-                        ? "bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-600/25"
-                        : "bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700 hover:border-gray-600"
+                        ? "glass-strong border-neon-blue text-neon-blue shadow-lg shadow-neon-blue/25 neon-text"
+                        : "glass border-neon-blue/30 text-neon-blue hover:border-neon-blue hover:text-neon-cyan"
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -240,7 +244,7 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
               } else if (pageNumber === currentPage - 2 || pageNumber === currentPage + 2) {
                 // Show ellipsis
                 return (
-                  <span key={page} className="px-2 py-2 text-gray-500">
+                  <span key={page} className="px-2 py-2 text-neon-blue/50 font-tech">
                     ...
                   </span>
                 );
@@ -253,10 +257,10 @@ const ProjectsSection = ({ projects }: { projects: project[] }) => {
           <motion.button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded-lg border transition-all duration-300 flex items-center gap-2 ${
+            className={`px-4 py-2 rounded-lg border transition-all duration-300 flex items-center gap-2 font-tech ${
               currentPage === totalPages
-                ? "bg-gray-800 border-gray-700 text-gray-500 cursor-not-allowed"
-                : "bg-gray-800 border-gray-700 text-gray-300 hover:bg-gray-700 hover:border-gray-600"
+                ? "glass border-neon-blue/20 text-neon-blue/30 cursor-not-allowed"
+                : "glass border-neon-blue/30 text-neon-blue hover:border-neon-blue hover:text-neon-cyan"
             }`}
             whileHover={currentPage !== totalPages ? { scale: 1.05 } : {}}
             whileTap={currentPage !== totalPages ? { scale: 0.95 } : {}}
