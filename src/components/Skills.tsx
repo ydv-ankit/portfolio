@@ -73,27 +73,6 @@ const skillsData: SkillData[] = [
 	{ text: "Postman", x: -300, y: -300, icon: <SiPostman />, category: "Tools", color: "neon-orange" },
 ];
 
-const Skill = ({ text, x, y, icon, animationKey, color }: { text: string; x: number; y: number; icon: React.ReactNode; animationKey: number; color: string }) => {
-	return (
-		<motion.div
-			key={animationKey}
-			className={`absolute flex justify-center items-center rounded-full font-tech glass border border-${color}/30 text-${color} px-4 py-2 shadow-lg cursor-pointer group`}
-			whileHover={{ 
-				scale: 1.1,
-				boxShadow: `0 0 20px rgba(0, 212, 255, 0.5)`
-			}}
-			initial={{ x: 0, y: 0, opacity: 0 }}
-			animate={{ x: x, y: y, opacity: 1 }}
-			transition={{ duration: 1.5, ease: "easeOut" }}
-		>
-			<div className="text-xl group-hover:scale-110 transition-transform duration-300">
-				{icon}
-			</div>
-			<span className="mx-2 font-medium group-hover:neon-text transition-all duration-300">{text}</span>
-		</motion.div>
-	);
-};
-
 export default function Skills() {
 	const [animationKey, setAnimationKey] = useState(0);
 	const [selectedCategory, setSelectedCategory] = useState("all");
@@ -111,32 +90,84 @@ export default function Skills() {
 	return (
 		<motion.div 
 			className="w-full relative"
-			initial={{ opacity: 0, y: 30 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.8 }}
-			viewport={{ once: true }}
+			initial={{ opacity: 0, y: 50 }}
+			whileInView={{ 
+				opacity: 1, 
+				y: 0,
+				transition: { duration: 0.8, ease: "easeOut" }
+			}}
+			viewport={{ once: true, margin: "-100px" }}
 		>
 			{/* Background Glow */}
-			<div className="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5 rounded-2xl blur-3xl"></div>
+			<motion.div 
+				className="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5 rounded-2xl blur-3xl"
+				initial={{ opacity: 0, scale: 0.8 }}
+				whileInView={{ 
+					opacity: 1, 
+					scale: 1,
+					transition: { duration: 1.2, delay: 0.2 }
+				}}
+				viewport={{ once: true }}
+			></motion.div>
 			
 			{/* Main Container */}
-			<div className="relative glass-strong rounded-2xl p-8 border border-neon-blue/20">
+			<motion.div 
+				className="relative glass-strong rounded-2xl p-8 border border-neon-blue/20"
+				initial={{ opacity: 0, y: 30, scale: 0.95 }}
+				whileInView={{ 
+					opacity: 1, 
+					y: 0, 
+					scale: 1,
+					transition: { duration: 0.8, ease: "easeOut" }
+				}}
+				viewport={{ once: true }}
+			>
 				{/* Header */}
 				<motion.div 
 					className="text-center mb-8"
-					initial={{ opacity: 0, y: -20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
+					initial={{ opacity: 0, y: -30 }}
+					whileInView={{ 
+						opacity: 1, 
+						y: 0,
+						transition: { duration: 0.6, delay: 0.3 }
+					}}
 					viewport={{ once: true }}
 				>
-					<h2 className="text-3xl font-cyber font-bold text-neon-blue neon-text mb-4">
+					<motion.h2 
+						className="text-3xl font-cyber font-bold text-neon-blue neon-text mb-4"
+						initial={{ opacity: 0, scale: 0.8 }}
+						whileInView={{ 
+							opacity: 1, 
+							scale: 1,
+							transition: { duration: 0.8, delay: 0.4 }
+						}}
+						viewport={{ once: true }}
+					>
 						TECHNICAL SKILLS
-					</h2>
-					<div className="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-cyan mx-auto mb-6"></div>
+					</motion.h2>
+					<motion.div 
+						className="w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-cyan mx-auto mb-6"
+						initial={{ width: 0, opacity: 0 }}
+						whileInView={{ 
+							width: "6rem", 
+							opacity: 1,
+							transition: { duration: 0.8, delay: 0.6 }
+						}}
+						viewport={{ once: true }}
+					></motion.div>
 					
 					{/* Category Filters */}
-					<div className="flex flex-wrap justify-center gap-2">
-						{categories.map((category) => (
+					<motion.div 
+						className="flex flex-wrap justify-center gap-2"
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ 
+							opacity: 1, 
+							y: 0,
+							transition: { duration: 0.6, delay: 0.8 }
+						}}
+						viewport={{ once: true }}
+					>
+						{categories.map((category, index) => (
 							<motion.button
 								key={category}
 								onClick={() => setSelectedCategory(category)}
@@ -145,20 +176,44 @@ export default function Skills() {
 										? "glass-strong border-neon-blue text-neon-blue neon-text"
 										: "glass border-neon-blue/30 text-neon-blue/70 hover:border-neon-blue hover:text-neon-blue"
 								}`}
+								initial={{ opacity: 0, scale: 0.8, y: 20 }}
+								whileInView={{ 
+									opacity: 1, 
+									scale: 1, 
+									y: 0,
+									transition: { duration: 0.4, delay: 0.9 + index * 0.1 }
+								}}
+								viewport={{ once: true }}
 								whileHover={{ scale: 1.05 }}
 								whileTap={{ scale: 0.95 }}
 							>
 								{category === "all" ? "ALL" : category.toUpperCase()}
 							</motion.button>
 						))}
-					</div>
+					</motion.div>
 				</motion.div>
 
 				{/* Skills Orbit */}
-				<div className="hidden lg:flex w-full h-[600px] items-center justify-center relative">
+				<motion.div 
+					className="hidden lg:flex w-full h-[600px] items-center justify-center relative"
+					initial={{ opacity: 0, scale: 0.8 }}
+					whileInView={{ 
+						opacity: 1, 
+						scale: 1,
+						transition: { duration: 1, delay: 0.5 }
+					}}
+					viewport={{ once: true }}
+				>
 					{/* Center Core */}
 					<motion.div
 						className="flex justify-center items-center rounded-full glass-strong border-2 border-neon-blue p-6 cursor-pointer relative z-10"
+						initial={{ scale: 0, opacity: 0 }}
+						whileInView={{ 
+							scale: 1, 
+							opacity: 1,
+							transition: { duration: 0.8, delay: 1, type: "spring", bounce: 0.4 }
+						}}
+						viewport={{ once: true }}
 						whileHover={{ 
 							scale: 1.1,
 							boxShadow: "0 0 30px rgba(0, 212, 255, 0.8)"
@@ -182,34 +237,102 @@ export default function Skills() {
 
 					{/* Skills Orbiting */}
 					{filteredSkills.map((skill, index) => (
-						<Skill
+						<motion.div
 							key={`${animationKey}-${index}`}
-							text={skill.text}
-							x={skill.x}
-							y={skill.y}
-							icon={skill.icon}
-							animationKey={animationKey}
-							color={skill.color}
-						/>
+							className={`absolute flex justify-center items-center rounded-full font-tech glass border border-${skill.color}/30 text-${skill.color} px-4 py-2 shadow-lg cursor-pointer group`}
+							initial={{ x: 0, y: 0, opacity: 0, scale: 0 }}
+							whileInView={{ 
+								x: skill.x, 
+								y: skill.y, 
+								opacity: 1, 
+								scale: 1,
+								transition: { 
+									duration: 1.2, 
+									delay: 1.5 + index * 0.1, 
+									ease: "easeOut",
+									type: "spring",
+									bounce: 0.3
+								}
+							}}
+							viewport={{ once: true }}
+							whileHover={{ 
+								scale: 1.1,
+								boxShadow: `0 0 20px rgba(0, 212, 255, 0.5)`
+							}}
+						>
+							<div className="text-xl group-hover:scale-110 transition-transform duration-300">
+								{skill.icon}
+							</div>
+							<span className="mx-2 font-medium group-hover:neon-text transition-all duration-300">{skill.text}</span>
+						</motion.div>
 					))}
 
 					{/* Floating Particles */}
-					<div className="absolute top-10 left-10 w-2 h-2 bg-neon-pink rounded-full animate-float"></div>
-					<div className="absolute top-20 right-20 w-1 h-1 bg-neon-cyan rounded-full animate-pulse-neon"></div>
-					<div className="absolute bottom-20 left-20 w-3 h-3 bg-neon-green rounded-full animate-float"></div>
-					<div className="absolute bottom-10 right-10 w-2 h-2 bg-neon-purple rounded-full animate-pulse-neon"></div>
-				</div>
+					<motion.div 
+						className="absolute top-10 left-10 w-2 h-2 bg-neon-pink rounded-full animate-float"
+						initial={{ opacity: 0, scale: 0 }}
+						whileInView={{ 
+							opacity: 1, 
+							scale: 1,
+							transition: { duration: 0.6, delay: 2.5 }
+						}}
+						viewport={{ once: true }}
+					></motion.div>
+					<motion.div 
+						className="absolute top-20 right-20 w-1 h-1 bg-neon-cyan rounded-full animate-pulse-neon"
+						initial={{ opacity: 0, scale: 0 }}
+						whileInView={{ 
+							opacity: 1, 
+							scale: 1,
+							transition: { duration: 0.6, delay: 2.7 }
+						}}
+						viewport={{ once: true }}
+					></motion.div>
+					<motion.div 
+						className="absolute bottom-20 left-20 w-3 h-3 bg-neon-green rounded-full animate-float"
+						initial={{ opacity: 0, scale: 0 }}
+						whileInView={{ 
+							opacity: 1, 
+							scale: 1,
+							transition: { duration: 0.6, delay: 2.9 }
+						}}
+						viewport={{ once: true }}
+					></motion.div>
+					<motion.div 
+						className="absolute bottom-10 right-10 w-2 h-2 bg-neon-purple rounded-full animate-pulse-neon"
+						initial={{ opacity: 0, scale: 0 }}
+						whileInView={{ 
+							opacity: 1, 
+							scale: 1,
+							transition: { duration: 0.6, delay: 3.1 }
+						}}
+						viewport={{ once: true }}
+					></motion.div>
+				</motion.div>
 
 				{/* Mobile Skills Grid */}
-				<div className="lg:hidden mt-8">
+				<motion.div 
+					className="lg:hidden mt-8"
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ 
+						opacity: 1, 
+						y: 0,
+						transition: { duration: 0.8, delay: 0.5 }
+					}}
+					viewport={{ once: true }}
+				>
 					<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
 						{filteredSkills.map((skill, index) => (
 							<motion.div
 								key={index}
 								className="glass rounded-lg p-4 border border-neon-blue/20 flex flex-col items-center gap-2 group"
-								initial={{ opacity: 0, scale: 0.8 }}
-								whileInView={{ opacity: 1, scale: 1 }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
+								initial={{ opacity: 0, scale: 0.8, y: 30 }}
+								whileInView={{ 
+									opacity: 1, 
+									scale: 1, 
+									y: 0,
+									transition: { duration: 0.5, delay: 0.8 + index * 0.1 }
+								}}
 								viewport={{ once: true }}
 								whileHover={{ 
 									scale: 1.05,
@@ -225,14 +348,17 @@ export default function Skills() {
 							</motion.div>
 						))}
 					</div>
-				</div>
+				</motion.div>
 
 				{/* Bottom Accent */}
 				<motion.div 
 					className="mt-20 text-center"
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					transition={{ duration: 0.6, delay: 0.8 }}
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ 
+						opacity: 1, 
+						y: 0,
+						transition: { duration: 0.6, delay: 1.2 }
+					}}
 					viewport={{ once: true }}
 				>
 					<div className="inline-flex items-center gap-2 text-neon-blue/70 font-tech text-sm">
@@ -240,7 +366,7 @@ export default function Skills() {
 						<div className="w-2 h-2 bg-neon-green rounded-full animate-pulse"></div>
 					</div>
 				</motion.div>
-			</div>
+			</motion.div>
 		</motion.div>
 	);
 }

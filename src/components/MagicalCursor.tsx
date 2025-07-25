@@ -118,7 +118,7 @@ export default function MagicalCursor() {
           
           {/* Center Dot */}
           <div 
-            className="absolute top-1 left-1/2 w-1 h-1 bg-white rounded-full transform -translate-x-1/2"
+            className="absolute top-1 left-3 w-1 h-1 bg-white rounded-full transform -translate-x-1/2"
             style={{
               boxShadow: '0 0 4px rgba(255, 255, 255, 0.8)',
             }}
