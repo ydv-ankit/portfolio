@@ -29,6 +29,11 @@ export default function MagicalCursor() {
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
+    // Hide default cursor when custom cursor is active
+    if (!isMobile) {
+      document.body.style.cursor = 'none';
+    }
+
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -62,6 +67,8 @@ export default function MagicalCursor() {
         document.removeEventListener('mouseenter', handleMouseEnter);
         document.removeEventListener('mouseleave', handleMouseLeave);
         document.removeEventListener('mouseover', handleElementHover);
+        // Restore default cursor when component unmounts
+        // document.body.style.cursor = 'auto';
       }
     };
   }, [mouseX, mouseY, isMobile]);
