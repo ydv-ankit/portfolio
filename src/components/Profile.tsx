@@ -2,8 +2,36 @@ import { Link } from "react-router-dom";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { CgMail } from "react-icons/cg";
+import { useEffect, useRef } from "react";
+import Typed from "typed.js";
 
 const Profile = () => {
+	const typedRef = useRef<HTMLSpanElement>(null);
+
+	useEffect(() => {
+		if (typedRef.current) {
+			const typed = new Typed(typedRef.current, {
+				strings: [
+					"Software Engineer",
+					"Full Stack Development",
+					"DevOps",
+					"AI/ML"
+				],
+				typeSpeed: 50,
+				backSpeed: 30,
+				backDelay: 2000,
+				loop: true,
+				showCursor: true,
+				cursorChar: '|',
+				autoInsertCss: true,
+			});
+
+			return () => {
+				typed.destroy();
+			};
+		}
+	}, []);
+
 	return (
 		<div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden w-full mx-auto">
 			{/* Main Content */}
@@ -41,6 +69,10 @@ const Profile = () => {
 				>
 					ANKIT YADAV
 				</motion.h1>
+
+				<div className="mb-4 text-center text-neon-cyan  md:text-2xl h-6 flex items-center justify-center">
+					<span ref={typedRef}></span>
+				</div>
 
 				{/* Social Links */}
 				<motion.div 

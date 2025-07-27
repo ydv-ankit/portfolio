@@ -62,7 +62,7 @@ export const Experience = () => {
 					<div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-neon-blue via-neon-cyan to-neon-purple transform -translate-x-1/2 z-10"></div>
 					
 					{/* Mobile: Left Timeline Line */}
-					<div className="lg:hidden absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-blue via-neon-cyan to-neon-purple"></div>
+					{/* <div className="lg:hidden absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-blue via-neon-cyan to-neon-purple"></div> */}
 					
 					{/* Timeline Items */}
 					<div className="space-y-8 lg:space-y-16">
