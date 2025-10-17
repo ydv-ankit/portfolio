@@ -6,12 +6,12 @@ const experienceData = [
 	{
 		title: "Backend & DevOps Engineer",
 		company: "WeVoice News",
-		period: "August 2024 - Present",
+		period: "August 2024 - September 2025",
 		icon: <FaRocket className="text-xl" />,
 		description: "Leading backend development and DevOps infrastructure for a cutting-edge news platform",
 		skills: ["Backend Development", "DevOps & Infrastructure", "System Architecture", "Cloud Deployment", "API Design"],
 		color: "neon-blue",
-		status: "active"
+		status: "completed"
 	},
 	{
 		title: "Frontend Developer",
