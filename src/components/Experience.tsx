@@ -1,16 +1,25 @@
-import { FaRocket, FaPalette } from "react-icons/fa";
+import { FaRocket, FaPalette, FaCode } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
 
 const experienceData = [
 	{
-		title: "Backend & DevOps Engineer",
+		title: "Software Developer Intern",
+		company: "Wingify",
+		period: "May 2025 - Present",
+		icon: <FaCode className="text-xl" />,
+		description: "Improved the Insights platform at Wingify by building real-time analytics features, microservices, and performance-focused enhancements.",
+		skills: ["JavaScript Frameworks", "TypeScript", "Performance Optimization", "Real-time Analytics", "Google Cloud Platform"],
+		color: "neon-skyblue",
+		status: "active"
+	},{
+		title: "Backend Engineer",
 		company: "WeVoice News",
-		period: "August 2024 - September 2025",
+		period: "August 2024 - April 2025",
 		icon: <FaRocket className="text-xl" />,
-		description: "Leading backend development and DevOps infrastructure for a cutting-edge news platform",
+		description: "Developed backend services and DevOps infrastructure for a news platform, improving data processing and user experience.",
 		skills: ["Backend Development", "DevOps & Infrastructure", "System Architecture", "Cloud Deployment", "API Design"],
-		color: "neon-blue",
+		color: "neon-green",
 		status: "completed"
 	},
 	{
@@ -47,10 +56,6 @@ export const Experience = () => {
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
 				>
-					<h2 className="text-3xl md:text-4xl font-cyber font-bold text-neon-blue neon-text mb-4">
-						EXPERIENCE TIMELINE
-					</h2>
-					<div className="w-20 md:w-24 h-1 bg-gradient-to-r from-neon-blue to-neon-cyan mx-auto mb-4"></div>
 					<p className="text-neon-cyan/80 font-futura text-base md:text-lg">
 						Journey Through Digital Innovation
 					</p>
