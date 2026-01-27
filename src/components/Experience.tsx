@@ -4,7 +4,7 @@ import { cn } from "../lib/utils";
 
 const experienceData = [
 	{
-		title: "Software Developer Intern",
+		title: "Software Engineer Intern",
 		company: "Wingify",
 		period: "May 2025 - Present",
 		icon: <FaCode className="text-xl" />,
@@ -13,7 +13,7 @@ const experienceData = [
 		color: "neon-skyblue",
 		status: "active"
 	},{
-		title: "Backend Engineer",
+		title: "Backend Engineer Intern",
 		company: "WeVoice News",
 		period: "August 2024 - April 2025",
 		icon: <FaRocket className="text-xl" />,
