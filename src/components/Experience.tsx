@@ -24,7 +24,7 @@ const experienceData = [
 	},
 	{
 		title: "Frontend Developer",
-		company: "University Website",
+		company: "University Website Coordinator",
 		period: "August 2023 - May 2024",
 		icon: <FaPalette className="text-xl" />,
 		description: "Developed responsive and modern user interfaces for university web applications",
