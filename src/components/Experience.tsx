@@ -6,12 +6,12 @@ const experienceData = [
 	{
 		title: "Software Engineer Intern",
 		company: "Wingify",
-		period: "May 2025 - Present",
+		period: "May 2025 - February 2026",
 		icon: <FaCode className="text-xl" />,
 		description: "Improved the Insights platform at Wingify by building real-time analytics features, microservices, and performance-focused enhancements.",
-		skills: ["JavaScript Frameworks", "TypeScript", "Performance Optimization", "Real-time Analytics", "Google Cloud Platform"],
+		skills: ["TypeScript", "Performance", "Optimization", "Real-time Analytics", "GCP"],
 		color: "neon-skyblue",
-		status: "active"
+		status: "completed"
 	},{
 		title: "Backend Engineer Intern",
 		company: "WeVoice News",
