@@ -68,7 +68,7 @@ const Navbar = () => {
             
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
               <Link
-                to={"https://heyankit.hashnode.dev"}
+                to={"https://blogs.ankitydv.in"}
                 target="_blank"
                 className="px-4 py-2 font-tech text-neon-cyan hover:text-neon-blue transition-colors duration-300 relative group"
               >
@@ -159,7 +159,7 @@ const Navbar = () => {
                   transition={{ duration: 0.2 }}
                 >
                   <Link
-                    to={"https://heyankit.hashnode.dev"}
+                    to={"https://blogs.ankitydv.in"}
                     target="_blank"
                     onClick={toggleMenu}
                     className="block px-4 py-3 font-tech text-neon-cyan hover:text-neon-blue transition-colors duration-300 glass rounded-lg border border-neon-blue/10 hover:border-neon-blue/30"
